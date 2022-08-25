@@ -1,6 +1,6 @@
 # Nature basket Clone
 
-Hello everyone, I'm Harshal Pardeshi builded a clone of `https://www.naturesbasket.co.in/` in my construct week of Unit-4 at Masai School. Link for my project:- `https://naturesbasketclone.vercel.app/`.
+Hello everyone, I'm Harshal Pardeshi builded a clone of `https://www.naturesbasket.co.in/` in my construct week of Unit-4 at Masai School. Link for my solution:- `https://naturesbasketclone.vercel.app/`.
 
 
 ## Features
