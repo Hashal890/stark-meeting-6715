@@ -1,6 +1,6 @@
-# Zoomcar Clone
+# Nature basket Clone
 
-Hello everyone, I'm Harshal Pardeshi builded a clone of `https://zoomcar.com/` in my construct week of Unit-4 at Masai School.
+Hello everyone, I'm Harshal Pardeshi builded a clone of `https://www.naturesbasket.co.in/` in my construct week of Unit-4 at Masai School. Link for my project:- `https://naturesbasketclone.vercel.app/`.
 
 
 ## Features
