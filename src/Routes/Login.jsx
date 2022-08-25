@@ -1,10 +1,10 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 
-export default function Footer() {
+export default function Login() {
   return (
     <Box>
-      <Heading>Footer Part</Heading>
+      <Heading>Login Page</Heading>
     </Box>
   );
 }
