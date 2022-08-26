@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import { GetCatData } from "./Api";
-import HomeSlickCard from "./HomeSlickCard";
+import HomeSlickOneCard from "./HomeSlickOneCard";
 import Styles from "./Homepage.module.css";
 
 const data = [
@@ -125,11 +125,11 @@ const data = [
   },
 ];
 
-export default function HomeSlickOne() {
+export default function CategorySection() {
   // const [data, setData] = React.useState([]);
   const settings = {
     infinite: true,
-    speed: 1000,
+    speed: 3000,
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true,
@@ -150,7 +150,7 @@ export default function HomeSlickOne() {
       </Box>
       <Slider {...settings}>
         {data.map((el) => (
-          <HomeSlickCard key={el.id} {...el} />
+          <HomeSlickOneCard key={el.id} {...el} />
         ))}
       </Slider>
       <br />

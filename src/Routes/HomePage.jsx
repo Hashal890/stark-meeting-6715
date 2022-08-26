@@ -6,7 +6,13 @@ import Styles from "../Components/Homepage.module.css";
 import HomeImageOne from "../Assets/HomepageOne.png";
 import CarouselOne from "../Components/CarouselOne";
 import HomeImageFlexOne from "../Components/HomeImageFlexOne";
-import HomeSlickOne from "../Components/HomeSlickOne";
+import CategorySection from "../Components/CategorySection";
+import CarouselTwo from "../Components/CarouselTwo";
+import TrendingSection from "../Components/TrendingSection";
+import DiscoverSection from "../Components/DiscoverSection";
+import EventsSection from "../Components/EventsSection";
+import ShopBySection from "../Components/ShopBySection";
+import AboutSection from "../Components/AboutSection";
 
 export default function HomePage() {
   return (
@@ -26,7 +32,13 @@ export default function HomePage() {
       />
       <CarouselOne />
       <HomeImageFlexOne />
-      <HomeSlickOne />
+      <CategorySection />
+      <CarouselTwo />
+      <TrendingSection />
+      <DiscoverSection />
+      <EventsSection />
+      <ShopBySection />
+      <AboutSection />
       <Footer />
     </Box>
   );

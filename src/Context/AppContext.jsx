@@ -7,6 +7,7 @@ export default function AppContextProvider({ children }) {
   const toggleIsAuth = () => {
     setIsAuth(!isAuth);
   };
+  
   return (
     <AppContext.Provider value={[isAuth, toggleIsAuth]}>
       {children}

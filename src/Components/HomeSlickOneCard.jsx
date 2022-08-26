@@ -2,7 +2,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Homepage.module.css";
 
-export default function HomeSlickCard({
+export default function HomeSlickOneCard({
   image,
   title,
   categoryOne,
