@@ -44,11 +44,12 @@ export default function Signup() {
       <Navbar />
       <br />
       <Box w="25%" m="auto">
-        <Image
-          src="https://www.zoomcar.com/build/fb65fcc43b8bededb813e093ea2d47d3.svg"
-          alt="Login Bg"
-          w="100%"
-        />
+      <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Text
           padding="16px 0 24px 0"
           lineHeight="28px"
@@ -223,6 +224,8 @@ export default function Signup() {
           </Button>
         </Box>
       </Box>
+      <br />
+      <br />
       <br />
       <Footer />
     </Box>
