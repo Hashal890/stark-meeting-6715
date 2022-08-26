@@ -16,7 +16,7 @@ import {
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { useState } from "react";
-import { GetData } from "../Components/Api";
+import { GetLoginData } from "../Components/Api";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -105,7 +105,7 @@ export default function Login() {
               </Button>
               <Button
                 onClick={() => {
-                  GetData(mbNum)
+                  GetLoginData(mbNum)
                     .then((res) => {
                       if (res.data.length === 0) navigate("/signup");
                       else modal2.onOpen();
@@ -140,7 +140,7 @@ export default function Login() {
                         if (mbNum === "" || mbNum.length !== 10)
                           alert("Please enter valid mobile number!");
                         else {
-                          GetData(mbNum)
+                          GetLoginData(mbNum)
                             .then((res) => {
                               if (pass === "" || res.data[0].password !== pass)
                                 alert("Please enter valid password!");

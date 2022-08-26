@@ -2,6 +2,46 @@
   width: 85%;
   margin: auto;
 }
-.gridImages{
+.gridImages {
   border-radius: 10px;
+}
+.headingCat {
+  background: url("https://www.naturesbasket.co.in/Images/heading-bg.png")
+    no-repeat scroll center 0px;
+  padding: 10px 0px;
+  width: 100%;
+  margin: 5px 0px 10px;
+}
+.headingCatText {
+  display: table;
+  margin: -6px auto 0;
+  padding: 0px 30px;
+  text-transform: uppercase;
+  background: #ffffff;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.slickCardImage {
+  cursor: pointer;
+  color: #880033;
+  box-shadow: 5px 5px 5px 5px rgb(199 138 102 / 37%);
+  border-radius: 10px;
+  width: 350px;
+}
+.slickCardTitle {
+  font-size: 16px;
+  color: #333333;
+  letter-spacing: 1px;
+  padding: 10px 0 10px 3px;
+  font-weight: 500;
+}
+.slickCardText {
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #f1f1f1;
+  background: url("https://www.naturesbasket.co.in/Images/arrows-shop-by.png")
+    no-repeat scroll right 14px;
+  letter-spacing: 1px;
+  padding: 10px 0 10px 3px;
+  cursor: pointer;
 }

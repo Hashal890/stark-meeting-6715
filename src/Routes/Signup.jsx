@@ -17,7 +17,7 @@ import {
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import React, { useState } from "react";
-import { PostData } from "../Components/Api";
+import { PostLoginData } from "../Components/Api";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -139,7 +139,7 @@ export default function Signup() {
               <Button
                 variant="ghost"
                 onClick={() => {
-                  PostData({ name, email, number, password })
+                  PostLoginData({ name, email, number, password })
                     .then((res) => console.log(res))
                     .catch((err) => console.log(err));
                   modal2.onOpen();
