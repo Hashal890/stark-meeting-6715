@@ -18,6 +18,7 @@ import Footer from "../Components/Footer";
 import { useState } from "react";
 import { GetLoginData } from "../Components/Api";
 import { useNavigate } from "react-router-dom";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export default function Login() {
   const modal1 = useDisclosure();
@@ -30,11 +31,12 @@ export default function Login() {
       <Navbar />
       <br />
       <Box w="25%" m="auto">
-        <Image
-          src="https://www.zoomcar.com/build/fb65fcc43b8bededb813e093ea2d47d3.svg"
-          alt="Login Bg"
-          w="100%"
-        />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Text
           padding="16px 0 24px 0"
           lineHeight="28px"
@@ -43,9 +45,8 @@ export default function Login() {
           fontWeight="bold"
           textAlign="start"
         >
-          Enter details to Login
+          Enter valid details to Login
         </Text>
-        <br />
         <Button
           onClick={modal1.onOpen}
           _hover={{ bg: "whiteAlpha.900" }}
@@ -196,8 +197,23 @@ export default function Login() {
               alt="Google"
             />
           </Button>
+          <Button
+            _hover={{ bg: "whiteAlpha.900" }}
+            bg="whiteAlpha.900"
+            borderBottom="1px solid #e0e0e0"
+            p="7"
+            w="100%"
+            rightIcon={<ExternalLinkIcon />}
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            <Text>Create an account</Text>
+          </Button>
         </Box>
       </Box>
+      <br />
+      <br />
       <br />
       <Footer />
     </Box>
