@@ -4,7 +4,7 @@ import CartPage from "./CartPage";
 import Checkout from "./Checkout";
 import HomePage from "./HomePage";
 import Login from "./Login";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 import ProductPage from "./ProductPage";
 import Signup from "./Signup";
 
@@ -19,9 +19,9 @@ export default function AllRoutes() {
       <Route
         path="/checkout"
         element={
-          // <PrivateRoute>
+          <PrivateRoute>
             <Checkout />
-          // </PrivateRoute>
+          </PrivateRoute>
         }
       />
     </Routes>
