@@ -1,7 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import CartPage from "./CartPage";
+import Checkout from "./Checkout";
 import HomePage from "./HomePage";
 import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
+import ProductPage from "./ProductPage";
 import Signup from "./Signup";
 
 export default function AllRoutes() {
@@ -10,6 +14,16 @@ export default function AllRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/product" element={<ProductPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route
+        path="/checkout"
+        element={
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }

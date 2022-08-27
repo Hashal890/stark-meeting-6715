@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { NavLink } from "react-router-dom";
 
 export default function MenuOne() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,21 +31,51 @@ export default function MenuOne() {
           SHOP BY CATEGORY {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </MenuButton>
         <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-          <MenuItem>Gift Hampers</MenuItem>
-          <MenuItem>Fruits & Vegetables</MenuItem>
-          <MenuItem>Cheese, Meat & Fruit Platters</MenuItem>
-          <MenuItem>Delicatessen & Cheese</MenuItem>
-          <MenuItem>International Cuisine</MenuItem>
-          <MenuItem>Health</MenuItem>
-          <MenuItem>Indian Grocery</MenuItem>
-          <MenuItem>Confectionary & Patisserie</MenuItem>
-          <MenuItem>Meats, Seafood and Eggs</MenuItem>
-          <MenuItem>Snack Bar</MenuItem>
-          <MenuItem>Snacks & Beverages</MenuItem>
-          <MenuItem>Breakfast, Dairy & Bakery</MenuItem>
-          <MenuItem>Instant Meals & Aids</MenuItem>
-          <MenuItem>The Good Food Cafe</MenuItem>
-          <MenuItem>Packing Material</MenuItem>
+          <NavLink to="/product">
+            <MenuItem>Gift Hampers</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Fruits & Vegetables</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Cheese, Meat & Fruit Platters</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Delicatessen & Cheese</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>International Cuisine</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Health</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Indian Grocery</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Confectionary & Patisserie</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Meats, Seafood and Eggs</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Snack Bar</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Snacks & Beverages</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Breakfast, Dairy & Bakery</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Instant Meals & Aids</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>The Good Food Cafe</MenuItem>
+          </NavLink>
+          <NavLink to="/product">
+            <MenuItem>Packing Material</MenuItem>
+          </NavLink>
         </MenuList>
       </Menu>
     </div>

@@ -44,35 +44,35 @@ export default function CarouselTwo() {
           ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="1000">
+          <div class="carousel-item active" data-bs-interval="800">
             <Image
               src="https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_1320x355-blog2.jpg"
               class="d-block w-100"
               alt="Home Carousel One"
             />
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
+          <div class="carousel-item" data-bs-interval="1600">
             <Image
               src="https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_paneerBlog_banner.jpg"
               class="d-block w-100"
               alt="Home Carousel Two"
             />
           </div>
-          <div class="carousel-item" data-bs-interval="3000">
+          <div class="carousel-item" data-bs-interval="2400">
             <Image
               src="https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_pastaBlog_banner.jpg"
               class="d-block w-100"
               alt="Home Carousel Three"
             />
           </div>
-          <div class="carousel-item" data-bs-interval="4000">
+          <div class="carousel-item" data-bs-interval="3200">
             <Image
               src="https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_1320x355-blog2.jpg"
               class="d-block w-100"
               alt="Home Carousel Four"
             />
           </div>
-          <div class="carousel-item" data-bs-interval="5000">
+          <div class="carousel-item" data-bs-interval="4000">
             <Image
               src="https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_paneerBlog_banner.jpg"
               class="d-block w-100"

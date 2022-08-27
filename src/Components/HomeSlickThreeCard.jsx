@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Homepage.module.css";
+import { Link } from "react-router-dom";
 
 export default function HomeSlickThreeCard({
   image,
@@ -11,7 +12,9 @@ export default function HomeSlickThreeCard({
 }) {
   return (
     <Box className={Styles.slickCardTwo}>
-      <Image src={image} alt={title} className={Styles.slickCardTwoImage} />
+      <Link to="/product">
+        <Image src={image} alt={title} className={Styles.slickCardTwoImage} />
+      </Link>
       <Text className={Styles.slickCardTwoTitle}>{title}</Text>
       <Text textAlign="center">{piece}</Text>
       <Flex alignItems="center" justifyContent="center" gap="10px" mt="2">

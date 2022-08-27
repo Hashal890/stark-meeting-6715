@@ -1,6 +1,7 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Homepage.module.css";
+import { Link } from "react-router-dom";
 
 export default function HomeSlickOneCard({
   image,
@@ -12,7 +13,9 @@ export default function HomeSlickOneCard({
 }) {
   return (
     <Box w="280px">
-      <Image src={image} alt={title} className={Styles.slickCardImage} />
+      <Link to="/product">
+        <Image src={image} alt={title} className={Styles.slickCardImage} />
+      </Link>
       <Text className={Styles.slickCardTitle}>{title}</Text>
       <Text className={Styles.slickCardText}>{categoryOne}</Text>
       <Text className={Styles.slickCardText}>{categoryTwo}</Text>
