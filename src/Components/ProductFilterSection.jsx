@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Text, Checkbox } from "@chakra-ui/react";
 import Styles from "../Components/ProductPage.module.css";
 
 export default function ProductFilterSection() {
@@ -24,28 +24,84 @@ export default function ProductFilterSection() {
         </Box>
         <Text className={Styles.filterBodyHeader}>Brands</Text>
         <Box className={Styles.filterBodyBox}>
-          <Text className={Styles.filterBodyTextTwo}>fruits and veget...</Text>
-          <Text className={Styles.filterBodyTextTwo}>fruit & vegetable</Text>
-          <Text className={Styles.filterBodyTextTwo}>healthy alternat...</Text>
-          <Text className={Styles.filterBodyTextTwo}>natures best</Text>
-          <Text className={Styles.filterBodyTextTwo}>natures basket</Text>
-          <Text className={Styles.filterBodyTextTwo}>tong garden</Text>
-          <Text className={Styles.filterBodyTextTwo}>fabbox</Text>
-          <Text className={Styles.filterBodyTextTwo}>very</Text>
-          <Text className={Styles.filterBodyTextTwo}>spc</Text>
-          <Text className={Styles.filterBodyTextTwo}>yummiez</Text>
-          <Text className={Styles.filterBodyTextTwo}>daucy</Text>
-          <Text className={Styles.filterBodyTextTwo}>dole</Text>
-          <Text className={Styles.filterBodyTextTwo}>godrej nature ba...</Text>
-          <Text className={Styles.filterBodyTextTwo}>vegetables</Text>
-          <Text className={Styles.filterBodyTextTwo}>american garden</Text>
-          <Text className={Styles.filterBodyTextTwo}>cirio</Text>
-          <Text className={Styles.filterBodyTextTwo}>fragata</Text>
-          <Text className={Styles.filterBodyTextTwo}>fresh</Text>
-          <Text className={Styles.filterBodyTextTwo}>freshcon</Text>
-          <Text className={Styles.filterBodyTextTwo}>fruits</Text>
-          <Text className={Styles.filterBodyTextTwo}>happilo</Text>
-          <Text className={Styles.filterBodyTextTwo}>tomato cherry</Text>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fruits and veget...
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fruit & vegetable
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            healthy alternat...
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            natures best
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            natures basket
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            tong garden
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fabbox
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            very
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            spc
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            yummiez
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            daucy
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            dole
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            godrej nature ba...
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            vegetables
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            american garden
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            cirio
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fragata
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fresh
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            freshcon
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            fruits
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            happilo
+          </Checkbox>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            tomato cherry
+          </Checkbox>
+        </Box>
+        <Text className={Styles.filterBodyHeader}>Dietary & Lifestyle</Text>
+        <Box className={Styles.filterBodyBox}>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            non-vegetarian
+          </Checkbox>
+        </Box>
+        <Text className={Styles.filterBodyHeader}>Availability</Text>
+        <Box className={Styles.filterBodyBox}>
+          <Checkbox fontSize="12px" className={Styles.filterBodyTextTwo}>
+            Exclude Out Of Stock
+          </Checkbox>
         </Box>
       </Box>
     </Box>
