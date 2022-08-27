@@ -20,11 +20,32 @@ export const PostLoginData = async ({ name, email, number, password }) => {
 };
 
 export const GetCatData = () => {
-  return axios.get("https://harshal-json-mock-server.herokuapp.com/category");
-
   // fetch("https://harshal-json-mock-server.herokuapp.com/category").then(
   //   (res) => {
   //     return res.json();
   //   }
   // );
+  return axios.get(
+    "https://harshal-json-mock-server.herokuapp.com/natureBasket"
+  );
+};
+
+export const GetWholeData = (setData) => {
+  axios
+    .get("https://harshal-json-mock-server.herokuapp.com/natureBasket")
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+  //   .catch((err) => console.log(err));
+  // try {
+  //     setLoading(true);
+  //     let res = await fetch(
+  //       `https://harshal-json-mock-server.herokuapp.com/natureBasket`
+  //     );
+  //     let data = await res.json();
+  //     console.log(data);
+  //     setLoading(false);
+  //     setData(data);
+  //   } catch {
+  //     setLoading(false);
+  //   }
 };
