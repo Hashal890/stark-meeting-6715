@@ -8,6 +8,7 @@
   background-color: #fff;
   border: solid 1px #ededed;
   border-radius: 4px;
+  height: fit-content;
 }
 .filterHeader {
   text-transform: uppercase;
@@ -95,4 +96,31 @@
 }
 .productViewMainBox {
   width: 82.5%;
+}
+.breadcrumb {
+  margin: 15px 0 20px;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+.viewHeaderOne {
+  color: #111111;
+  font-size: 24px;
+  cursor: pointer;
+}
+.viewHeaderTwo {
+  color: #858585;
+  font-size: 16px;
+  cursor: pointer;
+}
+.viewHeaderLast {
+  background: url("https://www.naturesbasket.co.in/Images/heading-bg.png")
+    no-repeat scroll center 0px;
+  margin: 20px 0 10px;
+  padding: 10px 0px;
+}
+.viewHeaderText {
+  background: #ffffff;
+  margin-top: -10px;
+  font-size: 20px;
+  width: 70px;
 }
