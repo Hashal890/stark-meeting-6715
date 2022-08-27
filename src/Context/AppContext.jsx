@@ -1,15 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
+import Reducer from "./Reducer";
 
 export const AppContext = createContext();
 
 export default function AppContextProvider({ children }) {
-  const [isAuth, setIsAuth] = useState(false);
-  const toggleIsAuth = () => {
-    setIsAuth(!isAuth);
-  };
-  
+  const [state, dispatch] = useReducer(Reducer, {
+    isAuth: false,
+    token: null,
+  });
+
   return (
-    <AppContext.Provider value={[isAuth, toggleIsAuth]}>
+    <AppContext.Provider value={{ state, dispatch }}>
       {children}
     </AppContext.Provider>
   );
