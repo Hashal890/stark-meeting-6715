@@ -7,12 +7,15 @@ import {
   Select,
   Spacer,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { SearchIcon, StarIcon } from "@chakra-ui/icons";
 import Styles from "./Navbar.module.css";
+import { AppContext } from "../Context/AppContext";
+import { loginFailure } from "../Context/ActionCreaters";
 
 export default function NavbarPartOne() {
+  const { state, dispatch } = useContext(AppContext);
   return (
     <Flex alignItems="center">
       <Box w="24%">
@@ -36,12 +39,29 @@ export default function NavbarPartOne() {
           </Flex>
           <Spacer />
           <Flex>
-            <Box className={Styles.navbarBoxes}>
-              <NavLink to="/login">Login</NavLink>
-            </Box>
-            <Box className={Styles.navbarBoxes} border="0px">
-              <NavLink to="/signup">Register</NavLink>
-            </Box>
+            {state.isAuth ? (
+              <Box className={Styles.navbarBoxes}>
+                <Button
+                  onClick={() => {
+                    dispatch({ type: loginFailure });
+                  }}
+                  bg="whiteAlpha.900"
+                  fontSize="12px"
+                  fontWeight="500"
+                >
+                  Logout
+                </Button>
+              </Box>
+            ) : (
+              <>
+                <Box className={Styles.navbarBoxes}>
+                  <NavLink to="/login">Login</NavLink>
+                </Box>
+                <Box className={Styles.navbarBoxes} border="0px">
+                  <NavLink to="/signup">Register</NavLink>
+                </Box>
+              </>
+            )}
           </Flex>
         </Flex>
         <Flex alignItems="center" mt="10px">

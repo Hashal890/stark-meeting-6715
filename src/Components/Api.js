@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const GetLoginData = (number) => {
+export const GetLoginData = (email,password,number) => {
   return axios.get(
-    `https://harshal-json-mock-server.herokuapp.com/users?number=${number}`
+    `https://harshal-json-mock-server.herokuapp.com/users?number=${number}&email=${email}&password=${password}`
   );
 };
 

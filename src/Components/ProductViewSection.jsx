@@ -600,6 +600,7 @@ export default function ProductViewSection() {
           <BreadcrumbLink
             _hover={{ color: "#bbbbbb", border: "0px" }}
             href="/product"
+            isCurrentPage
           >
             Fruits & Vegetables
           </BreadcrumbLink>

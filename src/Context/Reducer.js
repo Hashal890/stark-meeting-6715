@@ -6,7 +6,7 @@ export default function Reducer(state, action) {
       return {
         ...state,
         isAuth: true,
-        token: action.payload.token,
+        token: action.token,
       };
     case loginFailure:
       return {
