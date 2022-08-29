@@ -34,3 +34,14 @@
   font-weight: 500;
   font-size: 16px;
 }
+.tableHeaderText {
+  border: 0px;
+  text-transform: uppercase;
+  text-align: end;
+  font-weight: bold;
+}
+.cartBox {
+  border: 1px solid #413030;
+  margin: 2px;
+  background-color: #f1f1f1;
+}

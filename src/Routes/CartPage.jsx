@@ -1,5 +1,16 @@
 import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
@@ -67,7 +78,35 @@ export default function CartPage() {
             10:00 am to 9.30 pm .
           </Text>
         </Flex>
-        
+        <Table variant="simple">
+          <Thead>
+            <Tr borderBottom="2px solid #8ad119">
+              <Th>Name</Th>
+              <Th>Price</Th>
+              <Th>Discount</Th>
+              <Th>Qty</Th>
+              <Th>Sub-Total</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr borderBottom="1px solid #999999">
+              <Td className={Styles.tableHeaderText} border="0px">
+                Fruits & Vegetables
+              </Td>
+            </Tr>
+            <br />
+            <Tr className={Styles.cartBox}>
+              <Td border="0px">
+                <Image />
+              </Td>
+              <Td border="0px"></Td>
+              <Td border="0px"></Td>
+              <Td border="0px"></Td>
+              <Td border="0px"></Td>
+              <Td border="0px"></Td>
+            </Tr>
+          </Tbody>
+        </Table>
       </Box>
       <Footer />
     </Box>

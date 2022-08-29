@@ -97,9 +97,11 @@ export default function NavbarPartOne() {
           <Box className={Styles.startIcon}>
             <StarIcon />
           </Box>
-          <Box className={Styles.cartIcon}>
-            <i class="fa-solid fa-cart-plus"></i>
-          </Box>
+          <NavLink to="/cart">
+            <Box className={Styles.cartIcon}>
+              <i class="fa-solid fa-cart-plus"></i>
+            </Box>
+          </NavLink>
         </Flex>
       </Box>
     </Flex>
