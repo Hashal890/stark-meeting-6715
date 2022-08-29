@@ -68,7 +68,7 @@ export default function PayCart() {
         <Spacer />
         <Box p="4">
           <Text fontWeight="semibold" fontSize="20">
-            USD ${calculateTotal() + 2}.00
+            USD ${calculateTotal() === 0 ? 0 : calculateTotal() + 2}.00
           </Text>
         </Box>
       </Flex>

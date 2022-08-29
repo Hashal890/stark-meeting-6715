@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 export default function AppContextProvider({ children }) {
   const [state, dispatch] = useReducer(Reducer, {
-    isAuth: false,
+    isAuth: true,
     token: null,
   });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Breadcrumb,
@@ -15,10 +15,22 @@ import {
 } from "@chakra-ui/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PayCart from "../Components/PayCart";
 
 export default function Checkout() {
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [fName, setFname] = useState("");
+  const [lName, setLname] = useState("");
+  const [company, setCompany] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+  const [number, setNumber] = useState("");
+  const navigate = useNavigate();
   return (
     <Box>
       <Navbar />
@@ -79,30 +91,95 @@ export default function Checkout() {
                 </Text>
               </Box>
             </Flex>
-            <Input placeholder="Enter email-ID" required />
+            <Input
+              placeholder="Enter email-ID"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <Checkbox mt="3"> Email me with news and offers</Checkbox>
             <Text mt="5" fontWeight="semibold" fontSize="20">
               Shipping address
             </Text>
-            <Select mt="4" placeholder="Select country/region" required>
-              <option value="option1">USA</option>
-              <option value="option2">India</option>
-              <option value="option3">UK</option>
+            <Select
+              mt="4"
+              placeholder="Select country/region"
+              required
+              onChange={(e) => {
+                setCountry(e.target.value);
+              }}
+            >
+              <option value="usa">USA</option>
+              <option value="in">India</option>
+              <option value="uk">UK</option>
             </Select>
             <Flex columnGap="3">
-              <Input mt="4" placeholder="First Name" required />
-              <Input mt="4" placeholder="Last Name" required />
+              <Input
+                mt="4"
+                placeholder="First Name"
+                required
+                value={fName}
+                onChange={(e) => setFname(e.target.value)}
+              />
+              <Input
+                mt="4"
+                placeholder="Last Name"
+                required
+                value={lName}
+                onChange={(e) => setLname(e.target.value)}
+              />
             </Flex>
-            <Input mt="4" placeholder="Company" required />
-            <Input mt="4" placeholder="Address" required />
-            <Input mt="4" placeholder="Apartment,suite,etc." required />
+            <Input
+              mt="4"
+              placeholder="Company"
+              required
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+            <Input
+              mt="4"
+              placeholder="Address"
+              required
+              value={address1}
+              onChange={(e) => setAddress1(e.target.value)}
+            />
+            <Input
+              mt="4"
+              placeholder="Apartment,suite,etc."
+              required
+              value={address2}
+              onChange={(e) => setAddress2(e.target.value)}
+            />
             <Flex columnGap="3">
-              <Input mt="4" placeholder="Enter City" required />
-              <Input mt="4" placeholder="Enter State" required />
-              <Input mt="4" placeholder="Enter ZIP code" required />
+              <Input
+                mt="4"
+                placeholder="Enter City"
+                required
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+              <Input
+                mt="4"
+                placeholder="Enter State"
+                required
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              />
+              <Input
+                mt="4"
+                placeholder="Enter ZIP code"
+                required
+                value={zip}
+                onChange={(e) => setZip(e.target.value)}
+              />
             </Flex>
-
-            <Input mt="4" placeholder="Enter phone number" required />
+            <Input
+              mt="4"
+              placeholder="Enter phone number"
+              required
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+            />
             <Flex>
               <Box p="4">
                 <Link to="/cart">
@@ -113,20 +190,37 @@ export default function Checkout() {
               </Box>
               <Spacer />
               <Box p="4">
-                <Link to="/">
-                  <Button
-                    pt="7"
-                    pb="7"
-                    pr="5"
-                    pl="5"
-                    bgColor="black"
-                    color="white"
-                    _hover={{ bg: "black", color: "white" }}
-                    onClick={() => alert("order successfully placed")}
-                  >
-                    Continue to shipping
-                  </Button>
-                </Link>
+                <Button
+                  pt="7"
+                  pb="7"
+                  pr="5"
+                  pl="5"
+                  bgColor="black"
+                  color="white"
+                  _hover={{ bg: "black", color: "white" }}
+                  onClick={() => {
+                    if (
+                      email === "" ||
+                      country === "" ||
+                      fName === "" ||
+                      lName === "" ||
+                      company === "" ||
+                      address1 === "" ||
+                      address2 === "" ||
+                      city === "" ||
+                      state === "" ||
+                      zip === "" ||
+                      number === ""
+                    )
+                      alert("Please enter all details correctly!");
+                    else {
+                      alert("Order Successfully Placed!");
+                      navigate("/");
+                    }
+                  }}
+                >
+                  Continue to shipping
+                </Button>
               </Box>
             </Flex>
           </Box>

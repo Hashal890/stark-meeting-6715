@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const GetLoginData = (email,password,number) => {
+export const GetLoginData = (email, password, number) => {
   return axios.get(
     `https://harshal-json-mock-server.herokuapp.com/users?number=${number}&email=${email}&password=${password}`
   );
@@ -52,6 +52,6 @@ export const GetWholeData = (setData) => {
 
 export const GetCartData = (setData) => {
   axios
-    .get("https://prashant-json-server.herokuapp.com/procart")
+    .get("https://harshal-json-mock-server.herokuapp.com/cart")
     .then((res) => setData(res.data));
 };
