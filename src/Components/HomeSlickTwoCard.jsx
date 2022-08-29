@@ -4,6 +4,7 @@ import Styles from "./Homepage.module.css";
 import { Link } from "react-router-dom";
 
 export default function HomeSlickTwoCard({
+  id,
   image,
   popUpMess,
   title,
@@ -12,7 +13,7 @@ export default function HomeSlickTwoCard({
 }) {
   return (
     <Box className={Styles.slickCardTwo}>
-      <Link to="/product">
+      <Link to={`/product/${id}`}>
         <Image src={image} alt={title} className={Styles.slickCardTwoImage} />
       </Link>
       <Text className={Styles.slickCardTwoPopup}>{popUpMess}</Text>

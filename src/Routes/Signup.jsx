@@ -44,7 +44,7 @@ export default function Signup() {
       <Navbar />
       <br />
       <Box w="25%" m="auto">
-      <br />
+        <br />
         <br />
         <br />
         <br />
@@ -140,9 +140,6 @@ export default function Signup() {
               <Button
                 variant="ghost"
                 onClick={() => {
-                  PostLoginData({ name, email, number, password })
-                    .then((res) => console.log(res))
-                    .catch((err) => console.log(err));
                   modal2.onOpen();
                   if (setTimeoutID) clearTimeout(setTimeoutID);
                   setTimeoutID = setTimeout(() => {
@@ -176,10 +173,14 @@ export default function Signup() {
                         if (pin === "" || pin.length !== 4)
                           alert("Please enter valid otp!");
                         else {
-                          alert("Verification completed!");
-                          modal2.onClose();
-                          modal1.onClose();
-                          navigate("/");
+                          PostLoginData({ name, email, number, password })
+                            .then((res) => {
+                              alert("Verification completed!");
+                              modal2.onClose();
+                              modal1.onClose();
+                              navigate("/login");
+                            })
+                            .catch((err) => console.log(err));
                         }
                       }}
                       variant="ghost"

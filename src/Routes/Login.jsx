@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Flex,
   Image,
   Input,
   Modal,
@@ -15,17 +16,22 @@ import {
 } from "@chakra-ui/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { GetLoginData } from "../Components/Api";
 import { useNavigate } from "react-router-dom";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { AppContext } from "../Context/AppContext";
+import { loginSuccess } from "../Context/ActionCreaters";
 
 export default function Login() {
   const modal1 = useDisclosure();
   const modal2 = useDisclosure();
   const [mbNum, setMbNum] = useState("");
   const [pass, setPass] = useState("");
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const { dispatch } = useContext(AppContext);
+
   return (
     <Box>
       <Navbar />
@@ -74,30 +80,37 @@ export default function Login() {
         <Modal isOpen={modal1.isOpen} onClose={modal1.onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Enter Mobile Number</ModalHeader>
+            <ModalHeader>Enter login credentials</ModalHeader>
             <ModalCloseButton />
-            <ModalBody display="flex" alignItems="center" gap="10px">
-              <Button
-                _hover={{ bg: "whiteAlpha.900" }}
-                bg="whiteAlpha.900"
-                borderBottom="1px solid #e0e0e0"
-                display="flex"
-                alignItems="center"
-                gap="8px"
-                color="#666"
-                fontWeight="semibold"
-              >
-                <Image
-                  src="https://zoomcar-assets.zoomcar.com/images/original/38ff9c58fe221677b6e8958c1caba43d35710fe2.png?1654779648"
-                  alt="India Logo"
-                  h="40px"
-                  mr="-2"
-                />{" "}
-                <span>+91</span>
-              </Button>
+            <ModalBody>
+              <Flex alignItems="center" gap="10px">
+                <Button
+                  _hover={{ bg: "whiteAlpha.900" }}
+                  bg="whiteAlpha.900"
+                  borderBottom="1px solid #e0e0e0"
+                  display="flex"
+                  alignItems="center"
+                  gap="8px"
+                  color="#666"
+                  fontWeight="semibold"
+                >
+                  <Image
+                    src="https://zoomcar-assets.zoomcar.com/images/original/38ff9c58fe221677b6e8958c1caba43d35710fe2.png?1654779648"
+                    alt="India Logo"
+                    h="40px"
+                    mr="-2"
+                  />{" "}
+                  <span>+91</span>
+                </Button>
+                <Input
+                  placeholder="Enter your registered mobile number"
+                  onChange={(e) => setMbNum(e.target.value)}
+                />
+              </Flex>
+              <br />
               <Input
-                placeholder="Enter your registered mobile number"
-                onChange={(e) => setMbNum(e.target.value)}
+                placeholder="Enter your registered email-ID"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </ModalBody>
             <ModalFooter>
@@ -106,14 +119,9 @@ export default function Login() {
               </Button>
               <Button
                 onClick={() => {
-                  GetLoginData(mbNum)
-                    .then((res) => {
-                      if (res.data.length === 0) navigate("/signup");
-                      else modal2.onOpen();
-                    })
-                    .catch((err) => {
-                      console.log(err);
-                    });
+                  if (mbNum === "" || email === "")
+                    alert("Please enter vaild credentials!");
+                  else modal2.onOpen();
                 }}
                 variant="ghost"
               >
@@ -132,25 +140,28 @@ export default function Login() {
                       type="password"
                     />
                   </ModalBody>
+                  <br />
+                  <br />
                   <ModalFooter>
                     <Button colorScheme="blue" mr={3} onClick={modal2.onClose}>
                       Close
                     </Button>
                     <Button
                       onClick={() => {
-                        if (mbNum === "" || mbNum.length !== 10)
-                          alert("Please enter valid mobile number!");
+                        if (pass === "") alert("Please enter vaild password!");
                         else {
-                          GetLoginData(mbNum)
+                          GetLoginData(email, pass, mbNum)
                             .then((res) => {
-                              if (pass === "" || res.data[0].password !== pass)
-                                alert("Please enter valid password!");
-                              else if (res.data[0].password === pass) {
+                              if (res.data.length > 0) {
                                 alert("Login successfull!");
+                                dispatch({
+                                  type: loginSuccess,
+                                  token: Date.now(),
+                                });
                                 modal2.onClose();
                                 modal1.onClose();
                                 navigate("/");
-                              }
+                              } else navigate("/signup");
                             })
                             .catch((err) => {
                               console.log(err);

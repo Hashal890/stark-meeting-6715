@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const GetLoginData = (number) => {
+export const GetLoginData = (email,password,number) => {
   return axios.get(
-    `https://harshal-json-mock-server.herokuapp.com/users?number=${number}`
+    `https://harshal-json-mock-server.herokuapp.com/users?number=${number}&email=${email}&password=${password}`
   );
 };
 
@@ -34,7 +34,7 @@ export const GetWholeData = (setData) => {
   axios
     .get("https://harshal-json-mock-server.herokuapp.com/natureBasket")
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => console.log(res));
   //   .catch((err) => console.log(err));
   // try {
   //     setLoading(true);
@@ -48,4 +48,10 @@ export const GetWholeData = (setData) => {
   //   } catch {
   //     setLoading(false);
   //   }
+};
+
+export const GetCartData = (setData) => {
+  axios
+    .get("https://prashant-json-server.herokuapp.com/procart")
+    .then((res) => setData(res.data));
 };
