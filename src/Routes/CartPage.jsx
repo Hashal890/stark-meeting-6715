@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -10,13 +10,29 @@ import {
   Th,
   Thead,
   Tr,
+  Button,
 } from "@chakra-ui/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import Styles from "../Components/CartPage.module.css";
+import { CartItemDelete, CountIncDec, GetCartData } from "../Components/Api";
 
 export default function CartPage() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    GetCartData(setData);
+  });
+
+  const calculateTotal = () => {
+    return data.reduce((sum, el) => sum + Number(el.price), 0);
+  };
+
+  const qTotal = () => {
+    return data.reduce((sum, el) => sum + Number(el.qty), 0);
+  };
+
   return (
     <Box>
       <Navbar />
@@ -35,7 +51,7 @@ export default function CartPage() {
           />
         </Link>
         <Flex alignItems="center" mt="40px" mb="15px" gap="0.5rem">
-          <Text>MY CART(0 ITEMS) |</Text>
+          <Text>MY CART({qTotal()} ITEMS) |</Text>
           <Link to="/cart">
             <Flex gap="0.5rem">
               <Image
@@ -90,21 +106,87 @@ export default function CartPage() {
           </Thead>
           <Tbody>
             <Tr borderBottom="1px solid #999999">
-              <Td className={Styles.tableHeaderText} border="0px">
+              <Td className={Styles.tableHeaderText} border="0px" textAlign="start">
                 Fruits & Vegetables
               </Td>
             </Tr>
             <br />
-            <Tr className={Styles.cartBox}>
-              <Td border="0px">
-                <Image />
-              </Td>
-              <Td border="0px"></Td>
-              <Td border="0px"></Td>
-              <Td border="0px"></Td>
-              <Td border="0px"></Td>
-              <Td border="0px"></Td>
-            </Tr>
+            {data.map((el) => (
+              <Tr className={Styles.cartBox} key={el.d}>
+                <Td border="0px">
+                  <Flex alignItems="center" gap="1rem">
+                    <Image src={el.image} alt={el.title} w="50px" h="50px" />
+                    <Text>{el.title}</Text>
+                  </Flex>
+                </Td>
+                <Td border="0px">₹ {el.aPrice}</Td>
+                <Td border="0px">₹ 0.00</Td>
+                <Td border="0px">
+                  <Flex
+                    display="flex"
+                    h="42px"
+                    alignItems="center"
+                    color="hsl(0, 0%, 100%)"
+                  >
+                    <Button
+                      fontSize="25px"
+                      backgroundColor="hsl(83, 47%, 52%)"
+                      borderRight="1px solid #fff"
+                      onClick={() => {
+                        if (el.qty <= 1) CartItemDelete(el.id);
+                        else
+                          CountIncDec(el.id, -1, el.qty, el.price, el.aPrice);
+                      }}
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      borderTopRightRadius="none"
+                      borderBottomRightRadius="none"
+                      _hover={{
+                        backgroundColor: "hsl(83, 47%, 52%)",
+                        color: "hsl(0, 0%, 100%)",
+                      }}
+                    >
+                      -
+                    </Button>
+                    <Button
+                      fontSize="15px"
+                      backgroundColor="hsl(83, 47%, 52%)"
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      borderRadius="none"
+                      _hover={{
+                        backgroundColor: "hsl(83, 47%, 52%)",
+                        color: "hsl(0, 0%, 100%)",
+                      }}
+                    >
+                      {el.qty}
+                    </Button>
+                    <Button
+                      fontSize="25px"
+                      backgroundColor="hsl(83, 47%, 52%)"
+                      borderLeft="1px solid #fff"
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      onClick={() =>
+                        CountIncDec(el.id, +1, el.qty, el.price, el.aPrice)
+                      }
+                      borderTopLeftRadius="none"
+                      borderBottomLeftRadius="none"
+                      _hover={{
+                        backgroundColor: "hsl(83, 47%, 52%)",
+                        color: "hsl(0, 0%, 100%)",
+                      }}
+                    >
+                      +
+                    </Button>
+                  </Flex>
+                </Td>
+                <Td border="0px">₹{calculateTotal()}</Td>
+              </Tr>
+            ))}
           </Tbody>
         </Table>
       </Box>

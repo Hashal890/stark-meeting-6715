@@ -2,15 +2,10 @@ import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./Homepage.module.css";
 import { Link } from "react-router-dom";
+import { CartDataAdd } from "../Components/Api";
 
-export default function HomeSlickTwoCard({
-  id,
-  image,
-  popUpMess,
-  title,
-  piece,
-  price,
-}) {
+export default function HomeSlickTwoCard(data) {
+  const { id, image, popUpMess, title, piece, price } = data;
   return (
     <Box className={Styles.slickCardTwo}>
       <Link to={`/product/${id}`}>
@@ -34,6 +29,10 @@ export default function HomeSlickTwoCard({
           bg="rgb(123, 205, 0)"
           _hover={{ background: "rgb(123, 205, 0)" }}
           fontSize="14px"
+          onClick={() => {
+            CartDataAdd({ ...data, qty: 1, aPrice: price });
+            alert("Item added to cart");
+          }}
         >
           ADD
         </Button>

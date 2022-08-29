@@ -20,11 +20,6 @@ export const PostLoginData = async ({ name, email, number, password }) => {
 };
 
 export const GetCatData = () => {
-  // fetch("https://harshal-json-mock-server.herokuapp.com/category").then(
-  //   (res) => {
-  //     return res.json();
-  //   }
-  // );
   return axios.get(
     "https://harshal-json-mock-server.herokuapp.com/natureBasket"
   );
@@ -33,25 +28,34 @@ export const GetCatData = () => {
 export const GetWholeData = (setData) => {
   axios
     .get("https://harshal-json-mock-server.herokuapp.com/natureBasket")
-    .then((res) => res.json())
-    .then((res) => console.log(res));
-  //   .catch((err) => console.log(err));
-  // try {
-  //     setLoading(true);
-  //     let res = await fetch(
-  //       `https://harshal-json-mock-server.herokuapp.com/natureBasket`
-  //     );
-  //     let data = await res.json();
-  //     console.log(data);
-  //     setLoading(false);
-  //     setData(data);
-  //   } catch {
-  //     setLoading(false);
-  //   }
+    .then((res) => res.json());
 };
 
 export const GetCartData = (setData) => {
   axios
     .get("https://harshal-json-mock-server.herokuapp.com/cart")
     .then((res) => setData(res.data));
+};
+
+export const CartDataAdd = (data) => {
+  axios({
+    url: `https://harshal-json-mock-server.herokuapp.com/cart`,
+    method: "POST",
+    data: data,
+  });
+};
+
+export const CartItemDelete = (id) => {
+  axios({
+    url: `https://harshal-json-mock-server.herokuapp.com/cart/${id}`,
+    method: "DELETE",
+  });
+};
+
+export const CountIncDec = (id, no, qty, price, aPrice) => {
+  axios({
+    url: `https://harshal-json-mock-server.herokuapp.com/cart/${id}`,
+    method: "PATCH",
+    data: { qty: Number(qty) + no, price: Number(price) + Number(aPrice) * no },
+  });
 };
