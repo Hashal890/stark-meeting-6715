@@ -14,6 +14,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Styles from "../Components/Homepage.module.css";
 import Styles2 from "../Components/ProductPage.module.css";
+import { CartDataAdd } from "../Components/Api";
 
 export default function SingleProduct() {
   const [data, setData] = useState({});
@@ -106,6 +107,10 @@ export default function SingleProduct() {
                 bg="rgb(123, 205, 0)"
                 _hover={{ background: "rgb(123, 205, 0)" }}
                 fontSize="14px"
+                onClick={() => {
+                  CartDataAdd({ ...data, qty: 1, aPrice: data.price });
+                  alert("Item added to cart");
+                }}
               >
                 ADD
               </Button>
