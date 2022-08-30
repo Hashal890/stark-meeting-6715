@@ -7,11 +7,10 @@ Hello everyone, I'm Harshal Pardeshi builded a clone of `https://www.naturesbask
 
 - Homepage with links to various sections.
 - Login & signup pages with random otp feature and modal.
-- Sort & filter by many options on product page.
-- Offcanas on cart page.
-- Get a smooth experience in payment, login & signup process.
 - Manual and automatic carousels.
 - Animations on carousels.
+- Sort & filter by many options on product page.
+- Get a smooth experience in payment, login & signup process.
 
 
 ## Tech Stack
