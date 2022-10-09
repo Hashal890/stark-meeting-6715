@@ -25,6 +25,24 @@ In this project we used following tech stacks:-
 - [Chakra UI](https://chakra-ui.com/getting-started)
 
 
+## Screenshots
+
+### 1. Home Page
+![Home Page](./src/Assets/homePage.png)
+### 2. Login Page
+![Login Page](./src/Assets/loginPage.png)
+### 3. Signup Page
+![Signup Page](./src/Assets/signupPage.png)
+### 4. Products Page
+![Products Page](./src/Assets/productPage.png)
+### 5. Product View Page
+![Product View Page](./src/Assets/productView.png)
+### 6. Cart Page
+![Cart Page](./src/Assets/cartPage.png)
+### 7. Checkout Page
+![Checkout Page](./src/Assets/checkoutPage.png)
+
+
 ## Connect with author
 
 - [Twitter](https://twitter.com/harshal258)
