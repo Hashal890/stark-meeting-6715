@@ -7,7 +7,7 @@ export const GetLoginData = (email, password, number) => {
 };
 
 export const PostLoginData = async ({ name, email, number, password }) => {
-  let data = await fetch(
+  await fetch(
     "https://harshal-json-mock-server.herokuapp.com/users",
     {
       method: "POST",
@@ -15,8 +15,6 @@ export const PostLoginData = async ({ name, email, number, password }) => {
       headers: { "Content-Type": "application/json" },
     }
   );
-  data = await data.json();
-  console.log(data);
 };
 
 export const GetCatData = () => {

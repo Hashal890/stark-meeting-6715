@@ -1,19 +1,23 @@
 import { loginFailure, loginSuccess } from "./ActionCreaters";
 
-export default function Reducer(state, action) {
-  switch (action.type) {
-    case loginSuccess:
+export default function Reducer(state, { type, payload }) {
+  switch (type) {
+    case loginSuccess: {
+      localStorage.setItem("token", JSON.stringify(payload.token));
       return {
         ...state,
         isAuth: true,
-        token: action.token,
+        token: payload.token,
       };
-    case loginFailure:
+    }
+    case loginFailure: {
+      localStorage.removeItem("token");
       return {
         ...state,
         isAuth: false,
         token: null,
       };
+    }
     default:
       return state;
   }

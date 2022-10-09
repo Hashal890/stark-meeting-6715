@@ -13,13 +13,13 @@ import Styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <Box w="85%" m="auto" bg="#fbfbfb" p="1rem">
+    <Box w={{ sm: "100%", md: "100%", lg: "85%" }} m="auto" bg="#fbfbfb" p="1rem">
       <Text fontSize="11px" color="#858585" mb="10">
         Find a variety of Best Christmas gifts such as delightful Cakes,
         Chocolates, Cookies, Turkey, Stollen, Gourmet Gift Baskets, Sweets &
         Lots More Here
       </Text>
-      <Flex w="90%" m="auto">
+      <Flex w={{ sm: "100%", md: "100%", lg: "85%" }} m="auto" flexWrap={"wrap"}>
         <Box>
           <Text className={Styles.footerHeader}>DOWNLOAD THE APP</Text>
           <a href="https://play.google.com/store/apps/details?id=com.godrej.naturesbasketltd">

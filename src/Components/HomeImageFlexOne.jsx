@@ -7,7 +7,7 @@ export default function HomeImageFlexOne() {
     <Flex
       alignItems="center"
       justifyContent="center"
-      w="85%"
+      w={{ sm: "90%", md: "90%", lg: "85%" }}
       m="auto"
       mt="1.5%"
       mb="1%"

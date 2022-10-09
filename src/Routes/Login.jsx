@@ -156,7 +156,7 @@ export default function Login() {
                                 alert("Login successfull!");
                                 dispatch({
                                   type: loginSuccess,
-                                  token: Date.now(),
+                                  payload: { token: Date.now() + email },
                                 });
                                 modal2.onClose();
                                 modal1.onClose();

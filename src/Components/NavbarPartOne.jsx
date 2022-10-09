@@ -17,7 +17,7 @@ import { loginFailure } from "../Context/ActionCreaters";
 export default function NavbarPartOne() {
   const { state, dispatch } = useContext(AppContext);
   return (
-    <Flex alignItems="center">
+    <Flex alignItems="center" flexWrap={"wrap"}>
       <Box w="24%">
         <NavLink to="/">
           <Image

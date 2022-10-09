@@ -3,10 +3,12 @@ import Reducer from "./Reducer";
 
 export const AppContext = createContext();
 
+const token = localStorage.getItem("token") || null;
+
 export default function AppContextProvider({ children }) {
   const [state, dispatch] = useReducer(Reducer, {
-    isAuth: false,
-    token: null,
+    isAuth: token === null ? false : true,
+    token: token,
   });
 
   return (

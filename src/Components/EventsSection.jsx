@@ -14,7 +14,7 @@ export default function EventsSection() {
       <Flex
         alignItems="center"
         justifyContent="center"
-        w="85%"
+        w={{ sm: "100%", md: "100%", lg: "85%" }}
         m="auto"
         mt="1.5%"
         mb="1%"

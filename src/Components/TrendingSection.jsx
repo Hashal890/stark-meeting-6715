@@ -44,7 +44,7 @@ export default function TrendingSection() {
       <Box className={Styles.headingCat}>
         <h2 className={Styles.headingCatText}>WHAT'S TRENDING</h2>
       </Box>
-      <Box display="grid" gridTemplateColumns="repeat(4,1fr)">
+      <Box display="grid" gridTemplateColumns={{sm:"repeat(2,1fr)",md:"repeat(2,1fr)",lg:"repeat(4,1fr)"}}>
         {data.map((el) => (
           <HomeSlickTwoCard key={el.id} {...el} />
         ))}

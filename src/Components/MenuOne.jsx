@@ -17,8 +17,8 @@ export default function MenuOne() {
         <MenuButton
           variant="ghost"
           mx={1}
-          py={[1, 2, 2]}
-          px={4}
+          // py={[1, 2, 2]}
+          // px={4}
           borderRadius={5}
           bg="#f3f3f3"
           aria-label="Courses"

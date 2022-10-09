@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CarouselOne() {
   return (
-    <Box w="85%" m="auto">
+    <Box w={{ sm: "90%", md: "90%", lg: "85%" }} m="auto">
       <div
         id="carouselExampleDark"
         class="carousel carousel-dark slide"

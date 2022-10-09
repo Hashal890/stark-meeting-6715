@@ -7,7 +7,7 @@ import Styles from "./Navbar.module.css";
 export default function Navbar() {
   return (
     <Box className={Styles.mainBox}>
-      <Box w="85%" m="auto">
+      <Box w={{ sm: "100%", md: "100%", lg: "85%" }} m="auto">
         <NavbarPartOne />
         <NavbarPartTwo />
       </Box>

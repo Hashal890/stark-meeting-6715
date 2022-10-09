@@ -61,7 +61,14 @@ export default function DiscoverSection() {
           GIFTS
         </Button>
       </Flex>
-      <Box display="grid" gridTemplateColumns="repeat(4,1fr)">
+      <Box
+        display="grid"
+        gridTemplateColumns={{
+          sm: "repeat(2,1fr)",
+          md: "repeat(2,1fr)",
+          lg: "repeat(4,1fr)",
+        }}
+      >
         {data.map((el) => (
           <HomeSlickThreeCard key={el.id} {...el} />
         ))}
