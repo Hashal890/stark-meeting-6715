@@ -22,7 +22,7 @@ export default function SingleProduct() {
 
   const getData = () => {
     fetch(
-      `https://harshal-json-mock-server.herokuapp.com/natureBasket/${params.id}`
+      `https://jsonmockserver.cyclic.app/nbFruits&Veg/${params.id}`
     )
       .then((res) => res.json())
       .then((res) => setData(res))
