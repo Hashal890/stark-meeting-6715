@@ -19,7 +19,7 @@ export const PostLoginData = async ({ name, email, number, password }) => {
 
 export const GetCatData = () => {
   return axios.get(
-    "https://jsonmockserver.cyclic.app/nbFruits&Veg"
+    "https://jsonmockserver.cyclic.app/nbCategory"
   );
 };
 
