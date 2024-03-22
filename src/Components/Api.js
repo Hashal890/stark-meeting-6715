@@ -57,3 +57,4 @@ export const CountIncDec = (id, no, qty, price, aPrice) => {
     data: { qty: Number(qty) + no, price: Number(price) + Number(aPrice) * no },
   });
 };
+
