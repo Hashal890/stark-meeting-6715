@@ -22,7 +22,7 @@ export default function SingleProduct() {
 
   const getData = () => {
     fetch(
-      `https://jsonmockserver.cyclic.app/nbFruits&Veg/${params.id}`
+      `https://jsonmockserver.onrender.com/nbFruits&Veg/${params.id}`
     )
       .then((res) => res.json())
       .then((res) => setData(res))
